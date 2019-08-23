@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
 });
 
 // SUBMITS an item
-router.post("/", async (req, res) => {
+router.post("/add", async (req, res) => {
   // create new post
   const post = new Post({
     todo_description: req.body.todo_description,

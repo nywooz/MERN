@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 export default class CreateToDo extends Component {
   constructor(props) {
@@ -40,6 +41,32 @@ export default class CreateToDo extends Component {
     console.log(`Todo Description: ${this.state.todo_description}`);
     console.log(`Todo Responsible: ${this.state.todo_responsible}`);
     console.log(`Todo Priority: ${this.state.todo_priority}`);
+
+    const {
+      todo_description,
+      todo_responsible,
+      todo_priority,
+      todo_completed
+    } = this.state;
+
+    const newTodo = {
+      todo_description: todo_description,
+      todo_responsible: todo_responsible,
+      todo_priority: todo_priority,
+      todo_completed: todo_completed
+    };
+
+    axios
+      .post("http://localhost:3000/todos/add", newTodo)
+      .then(function(res) {
+        console.log(res);
+      })
+      .catch(function(err) {
+        console.log(err);
+      })
+      .then(function() {
+        // always executed
+      });
 
     this.setState({
       todo_description: "",
