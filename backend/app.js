@@ -14,10 +14,10 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // import Routes
-const postsRoute = require("./routes/todos");
+const todosRoute = require("./routes/todos");
 
 // Middleware-Function that execute when this route is being hit
-app.use("/posts", postsRoute);
+app.use("/todos", todosRoute);
 
 // ROUTES
 // get: gets a message
@@ -31,8 +31,8 @@ mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true }, () =>
   console.log("connected to DB!")
 );
 
-var postsModel = mongoose.model("Test", new mongoose.Schema({ name: String }));
-console.log("sdsfs " + postsModel);
+var todosModel = mongoose.model("Test", new mongoose.Schema({ name: String }));
+console.log("sdsfs " + todosModel);
 /**
  * RESTful Services - https://www.restapitutorial.com/lessons/httpmethods.html
  *
@@ -66,7 +66,7 @@ app.listen(3000);
  * 
   
  
- fetch("http://localhost:3000/posts")
+ fetch("http://localhost:3000/todos")
   .then(result => {
     console.log(result.json());
   })

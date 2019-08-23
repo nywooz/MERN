@@ -2,13 +2,13 @@ const express = require("express");
 const router = express.Router();
 const Post = require("../models/ToDo");
 
-// GET BACK ALL POSTS
+// GET BACK ALL ITEMS
 router.get("/", async (req, res) => {
   // console.log("Middlewares running");
-  // res.send("<h1>we are on posts</h1>");
+  // res.send("<h1>we are on todos</h1>");
   try {
-    const posts = await Post.find();
-    res.json(posts);
+    const todos = await Post.find();
+    res.json(todos);
   } catch (err) {
     res.json({ message: err });
   }
@@ -59,7 +59,11 @@ router.patch("/:postId", async (req, res) => {
   try {
     const patchedPost = await Post.updateOne(
       { _id: req.params.postId },
-      { $set: { title: req.body.title } }
+      {
+        $set: {
+          title: req.body.title
+        }
+      }
     );
     res.json(patchedPost);
   } catch (err) {

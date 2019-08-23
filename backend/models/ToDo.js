@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const PostSchema = new mongoose.Schema({
+const ToDoSchema = new mongoose.Schema({
   todo_description: {
     type: String,
     required: true,
@@ -22,4 +22,4 @@ const PostSchema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model("todos", PostSchema);
+module.exports = mongoose.model("todos", ToDoSchema);
