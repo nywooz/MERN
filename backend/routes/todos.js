@@ -44,28 +44,32 @@ router.get("/:postId", async (req, res) => {
   }
 });
 
-// DELETE SPECIFIC POST
-router.delete("/:postId", async (req, res) => {
+// PATCH SPECIFIC POST
+router.patch("/:postId", async (req, res) => {
+  console.log(req.params.postId);
+  const myquery = { _id: req.params.postId };
+  const newvalues = {
+    $set: {
+      todo_description: req.body.todo_description,
+      todo_responsible: req.body.todo_responsible,
+      todo_priority: req.body.todo_priority,
+      todo_completed: req.body.todo_completed
+    }
+  };
+
   try {
-    const removedPost = await Post.remove({ _id: req.params.postId });
-    res.json(removedPost);
+    const patchedPost = await Post.updateOne(myquery, newvalues);
+    res.json(patchedPost);
   } catch (err) {
     res.json({ message: err });
   }
 });
 
-// PATCH SPECIFIC POST
-router.patch("/:postId", async (req, res) => {
+// DELETE SPECIFIC POST
+router.delete("/:postId", async (req, res) => {
   try {
-    const patchedPost = await Post.updateOne(
-      { _id: req.params.postId },
-      {
-        $set: {
-          title: req.body.title
-        }
-      }
-    );
-    res.json(patchedPost);
+    const removedPost = await Post.remove({ _id: req.params.postId });
+    res.json(removedPost);
   } catch (err) {
     res.json({ message: err });
   }

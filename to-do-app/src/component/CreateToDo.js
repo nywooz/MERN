@@ -16,25 +16,25 @@ export default class CreateToDo extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  onChangeTodoDescription(e) {
+  setValue = (name, value) => {
     this.setState({
-      todo_description: e.target.value
+      [name]: value
     });
-  }
+  };
 
-  onChangeTodoResponsible(e) {
-    this.setState({
-      todo_responsible: e.target.value
-    });
-  }
+  onChangeTodoDescription = e => {
+    this.setValue("todo_description", e.target.value);
+  };
 
-  onChangeTodoPriority(e) {
-    this.setState({
-      todo_priority: e.target.value
-    });
-  }
+  onChangeTodoResponsible = e => {
+    this.setValue("todo_responsible", e.target.value);
+  };
 
-  onSubmit(e) {
+  onChangeTodoPriority = e => {
+    this.setValue("todo_priority", e.target.value);
+  };
+
+  onSubmit = e => {
     e.preventDefault();
 
     console.log(`Form submitted:`);
@@ -74,7 +74,7 @@ export default class CreateToDo extends Component {
       todo_priority: "",
       todo_completed: false
     });
-  }
+  };
 
   render() {
     return (
