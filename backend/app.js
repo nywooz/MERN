@@ -56,7 +56,7 @@ DELETE	Delete
  */
 
 //How to start listenning to the server
-app.listen(3000);
+app.listen(3001);
 
 // sandbox code
 /**
@@ -66,7 +66,7 @@ app.listen(3000);
  * 
   
  
- fetch("http://localhost:3000/todos")
+ fetch("http://localhost:3001/todos")
   .then(result => {
     console.log(result.json());
   })

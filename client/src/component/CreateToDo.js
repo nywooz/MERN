@@ -57,7 +57,7 @@ export default class CreateToDo extends Component {
     };
 
     axios
-      .post("http://localhost:3000/todos/add", newTodo)
+      .post("http://localhost:3001/todos/add", newTodo)
       .then(function(res) {
         console.log(res);
       })

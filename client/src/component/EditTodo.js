@@ -46,7 +46,7 @@ export default class EditTodo extends Component {
     const that = this;
     axios
       .patch(
-        "http://localhost:3000/todos/" + that.props.match.params.id,
+        "http://localhost:3001/todos/" + that.props.match.params.id,
         newItem
       )
       .then(function(res) {
@@ -70,7 +70,7 @@ export default class EditTodo extends Component {
   componentDidMount() {
     const that = this;
     axios
-      .get("http://localhost:3000/todos/" + that.props.match.params.id)
+      .get("http://localhost:3001/todos/" + that.props.match.params.id)
       .then(res => {
         const {
           todo_description,

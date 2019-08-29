@@ -13,7 +13,7 @@ export default class TodosList extends Component {
   componentDidMount() {
     const that = this;
     axios
-      .get("http://localhost:3000/todos")
+      .get("http://localhost:3001/todos")
       .then(function(res) {
         that.setState({ todos: res.data });
       })

@@ -5,18 +5,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+To start the project, just do
+### `npm start` and this will run both backend and frontend
+
+
+
 In the project directory, you can run:
-
-Start your backend<br>
-cd backend<br>
-npm start<br>
-
-Start your frontend<br>
-cd to-do-app<br>
-npm start<br>
-
-And off you go.
-
 ### `npm start`
 
 Runs the app in the development mode.<br>
