@@ -7,13 +7,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-Start your backend
-cd backend
-npm start
+Start your backend<br>
+cd backend<br>
+npm start<br>
 
-Start your frontend
-cd to-do-app
-npm start
+Start your frontend<br>
+cd to-do-app<br>
+npm start<br>
 
 And off you go.
 
