@@ -37,7 +37,10 @@ export default class EditTodo extends Component {
   };
 
   onChangeTodoCompleted = e => {
-    this.setValue("todo_priority", e.target.value);
+    this.setState({
+      todo_completed: !this.state.todo_completed
+    });
+    // this.setValue("todo_completed", !this.state.todo_completed);
   };
 
   onSubmit = e => {
