@@ -1,6 +1,5 @@
 # MERN
 
-[![Coverage Status](https://coveralls.io/repos/github/nywooz/MERN/badge.svg?branch=master)](https://coveralls.io/github/nywooz/MERN?branch=master)
 
 
 MERN stack playground
